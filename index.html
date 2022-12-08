@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Auth Demo</title>
+        
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="d-flex justify-content-center p-5">
+        <section>
+            <h1 class="meta">Metaverse</h1>
+            <div class="box">
+                <div class="card">
+                    <div class="card-header">
+                        <center><h3>Login &nbsp; Form</h3></center>
+                    </div>
+                    <form onsubmit="login()" id="loginForm" class="card-body px-5 py-4">
+                        <label class="custom-field">
+                            <input id="email" type="text" class="input" required />
+                            <span class="placeholder">Email Id</span>
+                        </label><br />
+                        <label class="custom-field">
+                            <input id="password" type="password" autocomplete="on" class="input" required />
+                            <span class="placeholder">Password</span>
+                        </label><br /><br/>
+                        <center><button type="submit" class="btn btn-primary">Login</button>
+                            <button onclick="signUp()" class="btn btn-secondary">Sign Up</button></center>
+                    </form>
+                </div>
+                <hr>
+                <!-- <div class="google">
+                    <h1>OR</h1>
+                    <button class="btn googlebtn">
+                        <ion-icon name="logo-google" id="loginwithgoogle"></ion-icon>Sign up with Google</button>
+                </div> -->
+            </div>
+        </section>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+        <script src="firebase.js"></script>
+        <script src="index.js"></script>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+            import { getAuth ,GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+        
+            const firebaseConfig = {
+            };
+          
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            const provider = new GoogleAuthProvider(app);
+          
+            googlebtn.addEventListener('click',(e) => {
+             getRedirectResult(auth)
+               .then((result) => {
+                 const credential = GoogleAuthProvider.credentialFromResult(result);
+                 const token = credential.accessToken;
+          
+                 const user = result.user;
+          
+               }).catch((error) => {
+                 const errorCode = error.code;
+                 const errorMessage = error.message;
+                 const email = error.email;
+                 const credential = GoogleAuthProvider.credentialFromError(error);
+                 
+            });
+          });
+          
+            
+          
+          </script>
+    </body>
+</html>

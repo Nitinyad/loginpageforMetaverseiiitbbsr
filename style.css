@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,900;1,600;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+
+.card-body{
+    position: relative;
+    line-height: 77px;
+    margin-bottom: 20px;
+}
+.custom-field{
+    position: relative;
+    font-size: 14px;
+    padding-top: 20px;
+    margin-top: 5px;
+}
+
+.custom-field input{
+    padding: 12px;
+    width: 300px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1.5px solid gray;
+    outline: none;
+
+}
+
+.custom-field .placeholder{
+    position: absolute;
+    left: 12px;
+    top: calc(50% + 10px);
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+.custom-field input:valid + .placeholder,
+.custom-field input:focus + .placeholder{
+    top: calc(50% + -10px);
+    font-size: 10px;
+    color: #aaa;
+    padding: 5px;
+}
+
+.message{
+    font-size: 70px;
+    font-family: 'Ubuntu', sans-serif;
+    color: steelblue;
+}
+
+.success{
+    font-size: 18px;
+    margin-top: 15px;
+    color: seagreen;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.btn{
+    position: relative;
+    bottom: 3.5rem;
+    padding: 10px 50px;
+    border-radius: 20px;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.btn:hover{
+    border: 1px solid #aaa;
+    background: none;
+    color: white;
+}
+
+.sign{
+    position: relative;
+    bottom: 2rem;
+    left: 3.4rem;
+    font-size: 0.8rem;
+}
+
+section .meta{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 1100;
+    top: 2rem;
+    font-size: 2rem;
+    
+}
+
+
+.box hr{
+    position: relative;
+    bottom: 3.4rem;
+    height: 1px;
+    border: none;
+    background-color: #aaa;
+}
+.google h1{
+    position: relative;
+    color: #aaa;
+    font-weight: 100;
+    font-size: 15px;
+    bottom: 3rem;
+    left: 9rem;
+}
+.googlebtn{
+    position: relative;
+    left: 2rem;
+    bottom: 1rem;
+}
+.googlebtn ion-icon {
+
+    position: relative;
+    font-size: 20px;
+    /* margin: 12px 12px; */
+    margin-right: 12px;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(13, 13, 13);
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(yellow,red);
+    border-radius: 50%;
+    transform: translate(-270px,-170px);
+    animation: animate1 10s infinite;
+    transition: 1s;
+}
+@keyframes animate1 {
+    0%,100%{
+        transform: translate(-270px,-170px);
+    }
+    50%{
+        transform: translate(-270px,50px);
+    }
+}
+section::after{
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(rgb(15, 155, 255),rgb(0, 221, 0));
+    border-radius: 50%;
+    transform: translate(270px,170px);
+    animation: animate 10s infinite;
+    transition: 1s;
+}
+@keyframes animate {
+    0%,100%{
+        transform: translate(270px,170px);
+    }
+    50%{
+        transform : translate(270px,-10px)
+    }
+}
+.box{
+    position: relative;
+    min-width: 350px;
+    min-height: 400px;
+    background: rgba(255, 255, 255,0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    /* border: 1px solid rgba(177, 176, 176, 0.5); */
+    /* border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2); */
+    border-radius: 10px;
+    z-index: 10;
+    backdrop-filter: blur(25px);
+    padding: 15px;
+}
+
+.box h3{
+    color: white;
+    margin-bottom: 20px;
+    /* letter-spacing: 2px; */
+}
+.box h3 span{
+    font-size: 35px;
+    position: relative;
+    letter-spacing: 1px;
+    color: rgb(87, 0, 0);
+}
+.box .list .img img{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-size:cover ;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.box .list{
+    position: relative;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin-bottom: 15px;
+    transition: 0.5s;
+    color: white;
+}
+
+.box .list:hover{
+    background: white;
+    cursor: pointer;
+    color: black;
+    transform: translate(15px,-15px) scale(1.15);
+}
+/* .box .list:hover {
+    background-blend-mode: ;
+} */
+.content{
+    position: relative;
+    margin-left: 15px;
+}
+
+.content h4{
+    font-weight: 600;
+}
+.content p{
+    font-weight: 300;
+}
+
+.content .rank small{
+    font-weight: 100;
+}
