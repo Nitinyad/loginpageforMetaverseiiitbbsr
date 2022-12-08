@@ -30,11 +30,7 @@
                     </form>
                 </div>
                 <hr>
-                <!-- <div class="google">
-                    <h1>OR</h1>
-                    <button class="btn googlebtn">
-                        <ion-icon name="logo-google" id="loginwithgoogle"></ion-icon>Sign up with Google</button>
-                </div> -->
+                
             </div>
         </section>
         <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
@@ -49,35 +45,6 @@
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
-        <script type="module">
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-            import { getAuth ,GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
-        
-            const firebaseConfig = {
-            };
-          
-            const app = initializeApp(firebaseConfig);
-            const auth = getAuth(app);
-            const provider = new GoogleAuthProvider(app);
-          
-            googlebtn.addEventListener('click',(e) => {
-             getRedirectResult(auth)
-               .then((result) => {
-                 const credential = GoogleAuthProvider.credentialFromResult(result);
-                 const token = credential.accessToken;
-          
-                 const user = result.user;
-          
-               }).catch((error) => {
-                 const errorCode = error.code;
-                 const errorMessage = error.message;
-                 const email = error.email;
-                 const credential = GoogleAuthProvider.credentialFromError(error);
-                 
-            });
-          });
-          
-            
           
           </script>
     </body>
